@@ -1,0 +1,19 @@
+<div class="container-app">
+    <mat-toolbar>
+        <span>Find Movie Application</span>
+        <span class="spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>format_color_fill</mat-icon>Button Theme
+        </button>
+        <mat-menu #menu="matMenu">
+            <button value='theme1' mat-menu-item (click)="switchTheme('theme1')">Theme 1</button>
+            <button value='theme2' mat-menu-item (click)="switchTheme('theme2')">Theme 2</button>
+            <button value='theme3' mat-menu-item (click)="switchTheme('')">Default</button>
+        </mat-menu>
+    </mat-toolbar>
+</div>
+
+<div class="app-{{appId}}-theme" id="appRootClass">
+    <app-search></app-search>
+    <app-movie-details></app-movie-details>
+</div>

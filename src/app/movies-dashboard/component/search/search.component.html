@@ -1,0 +1,26 @@
+<div class="search-div">
+    <div class="card">
+        <form>
+            <div class="card-body border">
+                <div class="d-flex justify-content-center">
+                    <mat-radio-group aria-label="serach option" name="serach option">
+                        <mat-radio-button value="movieSearchBox" (change)="onItemChange('movieSearchBox')"
+                        [checked]="true">
+                            <app-movie-input class="mr-2" inputId="movieSearchBox" inputPlaceholder="Movie Title"
+                                (inputValue)="getMovie($event)"
+                                [inputDisabled]="movieSearchBoxdisable"></app-movie-input>
+                        </mat-radio-button>
+                        <mat-radio-button value="imdbBox" (change)="onItemChange('imdbBox')">
+                            <app-movie-input class="mr-2" inputId="imdbBox" inputPlaceholder="IMDB ID"
+                                (inputValue)="getMovie($event)"
+                                [inputDisabled]="imdbBoxdisable"></app-movie-input></mat-radio-button>
+                    </mat-radio-group>
+                    <app-movie-button class="mr-2" btnId="searchBtn" btnText="Search" btnColor="primary"
+                        (btnClick)="buttonClick($event)"></app-movie-button>
+                    <app-movie-button class="mr-2" btnId="clearBtn" btnText="Clear" btnColor="warn"
+                        (btnClick)="buttonClick($event)"></app-movie-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

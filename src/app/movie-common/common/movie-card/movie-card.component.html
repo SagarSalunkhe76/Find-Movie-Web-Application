@@ -1,0 +1,30 @@
+<ng-container *ngIf="movie.Response === 'True';else noMoviedSerached">
+  <mat-card class="movie-card">
+    <mat-card-header>
+      <mat-card-title>{{movie.Title}}</mat-card-title>
+      <mat-card-subtitle>{{movie.Language}} , {{movie.Year}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image class="imgSize" src={{movie.Poster}} alt={{movie.Title}}>
+    </mat-card-content>
+    <mat-card-content>
+      <p>
+        {{movie.Plot}}
+      </p>
+      <p>Awards : {{movie.Awards}}</p>
+      <p>IMDB Rating : {{movie.imdbRating}} ( ID : {{movie.imdbID}})</p>
+      <p>Writer : {{movie.Writer}}</p>
+      <button mat-button>Director : {{movie.Director}}</button>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-template #noMoviedSerached>
+  <div class="container">
+    <div class="card justify-content-center noResult">
+      <div class="card-body">
+        <span>{{noMovieResult}}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>
